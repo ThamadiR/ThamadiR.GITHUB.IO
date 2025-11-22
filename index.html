@@ -392,14 +392,17 @@
         }
 
         .timeline-item:nth-child(even) .timeline-content {
-            grid-column: 1;
-            text-align: right;
-        }
+    grid-column: 2;
+    text-align: right;
+}
 
         .timeline-item:nth-child(even) .timeline-empty {
-            grid-column: 2;
+            grid-column: 1;
         }
 
+        .timeline-item:nth-child(odd) .timeline-content {
+    text-align: right; 
+}
         .timeline-content {
             background: rgba(255, 255, 255, 0.03);
             backdrop-filter: blur(20px);
