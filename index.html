@@ -1034,29 +1034,37 @@ footer {
         }
 
         /* Responsive */
-        @media (max-width: 1024px) {
-            .hero-container {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
+       @media (max-width: 1024px) {
+    .hero-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
 
-            .timeline::before {
-                left: 30px;
-            }
+    .timeline::before {
+        left: 30px;
+    }
 
-            .timeline-item {
-                grid-template-columns: 1fr;
-                padding-left: 60px;
-            }
+    .timeline-item {
+        grid-template-columns: 1fr; /* Single column layout */
+        padding-left: 60px;
+    }
 
-            .timeline-item:nth-child(even) .timeline-content {
-                text-align: left;
-            }
+    /* RESET the grid columns for mobile so they don't get stuck on the right */
+    .timeline-item:nth-child(even) .timeline-content,
+    .timeline-item:nth-child(odd) .timeline-content {
+        grid-column: 1 !important;
+        text-align: left !important;
+    }
 
-            .timeline-dot {
-                left: 30px;
-            }
-        }
+    .timeline-item:nth-child(even) .timeline-empty,
+    .timeline-item:nth-child(odd) .timeline-empty {
+        display: none; /* Hide empty divs on mobile */
+    }
+
+    .timeline-dot {
+        left: 30px;
+    }
+}
 
         @media (max-width: 768px) {
             nav {
